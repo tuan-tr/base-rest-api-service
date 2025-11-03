@@ -20,7 +20,8 @@ public class JacksonConfiguration {
 						SerializationFeature.FAIL_ON_EMPTY_BEANS,
 						SerializationFeature.WRITE_DATES_AS_TIMESTAMPS,
 						DeserializationFeature.ADJUST_DATES_TO_CONTEXT_TIME_ZONE,
-						DeserializationFeature.ACCEPT_FLOAT_AS_INT)
+						DeserializationFeature.ACCEPT_FLOAT_AS_INT,
+						DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
 				// .propertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE)
 				.serializationInclusion(JsonInclude.Include.NON_NULL)
 				.createXmlMapper(false)

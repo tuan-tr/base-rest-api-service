@@ -4,7 +4,6 @@ import com.tth.common.auth.AuthEnviroment;
 import com.tth.common.i18n.I18nConfiguration;
 import com.tth.common.i18n.Translator;
 import com.tth.common.jackson.JacksonConfiguration;
-import com.tth.common.jackson.JsonParserProvider;
 import com.tth.common.jpa.CustomJpaRepositoryProvider;
 import com.tth.common.servletfilter.RequestIdHandlerFilter;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -28,7 +27,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 				I18nConfiguration.class,
 				Translator.class,
 				JacksonConfiguration.class,
-				JsonParserProvider.class,
 				CustomJpaRepositoryProvider.class,
 		})
 public class ComponentConfiguration {

@@ -1,7 +1,7 @@
 package com.tth.template.config.auth;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tth.common.http.FailureResponseBody;
-import com.tth.common.jackson.JsonParserProvider;
 import com.tth.common.util.AppExceptionUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -28,8 +28,7 @@ import java.util.Map;
 @Component
 @RequiredArgsConstructor
 public final class AppBearerTokenAuthenticationEntryPoint implements AuthenticationEntryPoint {
-
-	private final JsonParserProvider jsonParserProvider;
+	private final ObjectMapper objectMapper;
 	private String realmName;
 
 	/**
@@ -72,7 +71,7 @@ public final class AppBearerTokenAuthenticationEntryPoint implements Authenticat
 		String code = AppExceptionUtils.extractErrorCode(authException);
 		FailureResponseBody body = new FailureResponseBody(code, authException.getMessage());
 		response.addHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
-		response.getWriter().write(jsonParserProvider.toString(body));
+		response.getWriter().write(objectMapper.writeValueAsString(body));
 	}
 
 	/**
