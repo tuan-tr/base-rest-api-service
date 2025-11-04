@@ -2,7 +2,7 @@ environment.mode: ${ENVIRONMENT_MODE:local}
 
 server:
   port: ${SERVER_PORT:8080}
-  servlet.context-path: ${SERVLET_CONTEXT_PATH:/template}
+  servlet.context-path: ${SERVLET_CONTEXT_PATH:/base-rest-api}
   tomcat:
     relaxed-path-chars: "[,]"
     relaxed-query-chars: "[,]"
@@ -23,12 +23,12 @@ spring:
     open-in-view: false
     properties:
       hibernate:
-        # default_schema: template
+        # default_schema: base_rest_api
         enable_lazy_load_no_trans: true
         session.events.log.LOG_QUERIES_SLOWER_THAN_MS: ${LOG_QUERIES_SLOWER_THAN_MS:500}
   flyway:
     enabled: true
-    schemas: template
+    schemas: base_rest_api
     locations: classpath:db/migration
   web:
     resources.add-mappings: false
@@ -53,8 +53,8 @@ logbook:
     include:
       - path: /**
     exclude:
-      - path: /template/docs/**
-      - path: /template/swagger-ui/**
+      - path: /base-rest-api/docs/**
+      - path: /base-rest-api/swagger-ui/**
   strategy: ${LOGBOOK_STRATEGY:body-only-if-status-at-least}
   format:
     style: ${LOGBOOK_FORMAT_STYLE:json}

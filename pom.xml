@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.tth</groupId>
-	<artifactId>template</artifactId>
+	<artifactId>restapi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>template</name>
-	<description>template</description>
+	<name>restapi</name>
+	<description>base rest api</description>
 	<properties>
 		<java.version>21</java.version>
 		<querydsl.version>5.0.0</querydsl.version>

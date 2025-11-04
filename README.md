@@ -1,2 +1,2 @@
-# template-service
+# base-rest-api-service
 Valid Authorization Token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRlbW8tdXNlciIsInNjb3BlIjpbIkRFRkFVTFQiXX0.kh6ZzxV6ar_sYkEZ9z_7Pn1ETDQ3X-pOXw5UpWxa8GY
